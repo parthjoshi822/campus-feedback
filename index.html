@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Feedback</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Campus Feedback</h1>
+      <p class="subtitle">Share your thoughts to help us improve campus life.</p>
+    </header>
+
+    <form id="feedbackForm" novalidate>
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" autocomplete="name">
+        <span class="error" id="nameError" role="alert"></span>
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+        <span class="error" id="emailError" role="alert"></span>
+      </div>
+
+      <div class="field">
+        <label for="feedback">Feedback</label>
+        <textarea id="feedback" name="feedback" rows="5" placeholder="Write your feedback (20 to 500 characters)"></textarea>
+        <div class="meta">
+          <span class="error" id="feedbackError" role="alert"></span>
+          <span class="counter" id="counter">0 / 500</span>
+        </div>
+      </div>
+
+      <button type="submit">Submit Feedback</button>
+      <p id="formStatus" class="status" role="status"></p>
+    </form>
+
+    <section class="results" aria-live="polite">
+      <h2>Submitted Feedback</h2>
+      <p id="emptyNote" class="empty-note">No feedback submitted yet.</p>
+      <ul id="feedbackList"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
